@@ -1,0 +1,280 @@
+.locations {
+  padding: 1rem 0;
+}
+
+.locations-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.locations-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.locations-header p {
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.location-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.location-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: #28a745;
+}
+
+.location-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.location-card:hover .location-image {
+  transform: scale(1.1);
+}
+
+.location-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.location-icon {
+  font-size: 4rem;
+  opacity: 0.7;
+}
+
+.location-type-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.location-info {
+  padding: 1.5rem;
+}
+
+.location-title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.location-details {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.location-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  border-left: 3px solid #28a745;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.resident-count {
+  background: #e8f5e8;
+  color: #155724;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.location-description {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  border-left: 4px solid #ffd700;
+}
+
+.location-description p {
+  margin: 0;
+  font-style: italic;
+  color: #495057;
+}
+
+.location-residents {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e3f2fd;
+  border-radius: 0.5rem;
+  border-left: 3px solid #2196f3;
+}
+
+.residents-label {
+  font-weight: 600;
+  color: #2196f3;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.residents-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.resident-tag {
+  background: white;
+  color: #2196f3;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #2196f3;
+}
+
+.resident-tag.more {
+  background: #2196f3;
+  color: white;
+}
+
+/* Loading and Error States */
+.loading, .error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .locations-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .locations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1rem;
+  }
+  
+  .location-info {
+    padding: 1.2rem;
+  }
+  
+  .location-info h3 {
+    font-size: 1.2rem;
+  }
+  
+  .location-image {
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .locations {
+    padding: 0.5rem 0;
+  }
+  
+  .locations-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .locations-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .locations-header p {
+    font-size: 1rem;
+  }
+  
+  .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .location-card {
+    margin: 0 0.5rem;
+  }
+  
+  .location-image {
+    height: 150px;
+  }
+  
+  .location-info {
+    padding: 1rem;
+  }
+  
+  .location-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .location-info p {
+    font-size: 0.9rem;
+  }
+}

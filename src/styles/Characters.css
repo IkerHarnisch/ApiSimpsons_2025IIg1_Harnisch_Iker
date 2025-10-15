@@ -1,0 +1,262 @@
+/* ===== CHARACTERS PAGE ===== */
+.characters {
+  padding: 1rem 0;
+}
+
+.characters-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.characters-header h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.search-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.character-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.character-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  border-color: #007bff;
+}
+
+.character-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.character-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: #f8f9fa;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.1);
+}
+
+.character-info {
+  padding: 1.5rem;
+}
+
+.character-title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.character-info p {
+  margin-bottom: 0.8rem;
+  color: #6c757d;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.character-info strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+.character-occupation {
+  color: #007bff !important;
+  font-weight: 500;
+}
+
+.character-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status-alive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-dead {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-unknown {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+
+.character-actions {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.character-detail-btn {
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.character-detail-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.no-results h3 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+/* Loading and Error States */
+.loading, .error {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .characters-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .characters-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .character-info {
+    padding: 1rem;
+  }
+  
+  .character-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .characters {
+    padding: 0.5rem 0;
+  }
+  
+  .characters-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .characters-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .characters-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .character-card {
+    margin: 0 0.5rem;
+  }
+  
+  .character-image {
+    height: 180px;
+  }
+  
+  .character-info {
+    padding: 1rem;
+  }
+  
+  .character-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .character-info p {
+    font-size: 0.9rem;
+  }
+  
+  .search-input {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
